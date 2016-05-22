@@ -4,9 +4,10 @@ import java.util.Scanner;
 public class mainRoom {
 
 
-	public static void Powerstart(){
+	public static void Mainstart(){
 		String response;
 		Scanner input = new Scanner(System.in);
+		while (StartHere.Health > 1) {
 		System.out.println("Dank is now in the Main Room. What would you like to do?");
 		response = input.next();
 		
@@ -19,7 +20,7 @@ public class mainRoom {
 		}
 		else if (response.contains("right")){
 			System.out.println("Dank goes through the right door into another room.");
-			//Insert PowerRoom code here
+			PowerRoom.Powerstart();
 		}
 		else if (response.contains("pick")){
 			System.out.println("There is nothing to pick up");
@@ -29,11 +30,11 @@ public class mainRoom {
 		}
 		else if (response.contains("forward")) {
 			System.out.println("Dank moves forward through the door to its front.");
-			//Insert room3 code here
+			Room3.Room3Start();
 		}
 		else if (response.contains("backward")){
 			System.out.println("Dank turns around and moves through the door to its rear.");
-			//Insert room2 code here
+			Room2.Room2start();
 		}
 		else if (response.equals("attack with item")){
 			System.out.println("There is nothing to pick up");
@@ -43,15 +44,16 @@ public class mainRoom {
 		
 
 		}
-		else if (response.contains("place power cell")){
-			
+		else if (response.contains("place ")){
+			System.out.println("You cant place anything here");
 
 		}
 
 	}
-
-    
-    //id rename the function from powerstart to something relevent. -- br
+	
+	System.out.println("Game OVER");
+	
+}  //id rename the function from powerstart to something relevent. -- br
     
    
 

@@ -11,20 +11,56 @@ public static void Room2start(){
 		SecureRandom random = new SecureRandom();
 		int enemy=3;
 		int damage = 1 + random.nextInt(3);
-		System.out.println("You are now in Room2");
+		while (StartHere.Health > 1) {
+		
+		System.out.println("You are now in Room2. What would you like to do?");
 		response = input.next();
 		
 		if(response.contains("Look Around")){
-			
+			System.out.println("There is a Cyborg Monster in this Room. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(2);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+			}
+			System.out.println("Victory! is yours. Good Job. He dropped a Power cell");
 		}
-		else if (response.contains("forward")) {
-			System.out.println("Dank can go through the door to its front.");
+		else if (response.contains("backward")) {
+			System.out.println("Dank is blocked by a cyborg. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(2);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+			}
+			System.out.println("Victory! is yours. Good Job. He dropped a Power cell");
 		}
-		else if (response.contains("backward")){
-			System.out.println("Dank can go through the door to its rear. ");
+		else if (response.contains("forward")){
+			System.out.println("Dank can go forward. ");
+			mainRoom.Mainstart();
 		}
 		else if (response.contains("pick")){
-			System.out.println("There is nothing to pick up");
+			if (enemy > 0) {
+			System.out.println("You cant pick up anything there is a Cyborg. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(2);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+			}
+			System.out.println("Victory! is yours. Good Job. He dropped a Power cell");
+			}
+			else {
+				System.out.println("You picked up Power Cell");
+				StartHere.item = "Power Cell";
+			}
 		}
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
@@ -48,4 +84,6 @@ public static void Room2start(){
 		}
 
 	}
+System.out.println("Game OVER");
+}
 }

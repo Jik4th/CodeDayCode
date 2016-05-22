@@ -7,31 +7,45 @@ public class Room1 {
 		
 		String response;
 		Scanner input = new Scanner(System.in);
+		while (StartHere.Health > 1) {
 		SecureRandom random = new SecureRandom();
-		int enemy=3;
-		int damage = 1 + random.nextInt(3);
-		System.out.println("Dank is now in Room1");
+		int enemy = 3;
+		int damage; 
+		System.out.println("Dank is now in Room1. What would you like to do?");
 		response = input.next();
 		
 		if(response.contains("Look Around")){
-			
+			System.out.println("There is a Gas Monster in this Room. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(3);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+			}
+			System.out.println("Victory! is yours. Good Job");
 		}
 		else if (response.contains("left")) {
-			System.out.println("Dank can go through the door to its left.");
+			System.out.println("Dank can't go to the left, there's a monster blocking the way!.");
 		}
 		else if (response.contains("right")){
 			System.out.println("Dank can go through the door to its right. ");
 		}
 		else if (response.contains("pick")){
-			System.out.println("Dank can pick up a flamethrower or a power cell.");
-			response = input.next();
-			if(response.contains("flamethrower")){
-				StartHere.item ="flamethrower";
-				System.out.println("Dank picked up a flamethrower!");
+			if (enemy > 0) {
+			System.out.println("You cant pick up anything there is a Gas Monster. You are about to fight him");
+				while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(2);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+				}
 			}
-			else if (response.contains("power cell"))
-				StartHere.item = "power cell";
-			System.out.println("Dank picked up a power cell.");
+			else {
+				System.out.println("You picked up a power cell");
+				StartHere.item = "Power Cell";
+			}
 		}
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
@@ -54,6 +68,8 @@ public class Room1 {
 
 		}
 
+	}
+	System.out.println("Game OVER");
 	}
 }
 
