@@ -40,9 +40,8 @@ public class mainRoom {
 			System.out.println("There is nothing to pick up");
 		}
 		else if (response.contains("access console")){
-			System.out.println("");
-		
-
+			System.out.println("Here is a map");
+	
 		}
 		else if (response.contains("place ")){
 			System.out.println("You cant place anything here");

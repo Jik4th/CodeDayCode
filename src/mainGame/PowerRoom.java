@@ -15,32 +15,26 @@ public class PowerRoom {
 			response = input.next();
 
 			if (response.contains("Look Around")) {
-				if (StartHere.Power1 == true && (StartHere.Power2 == false)
-						&& (StartHere.Power3 == false)) {
-					System.out
-							.println("There is a power cell in generator 1, but not two or three");
-				} else if (StartHere.Power1 == false
-						&& (StartHere.Power2 == false)
-						&& (StartHere.Power3 == false)) {
-					System.out
-							.println("There is no power cell in generator 1, 2, or 3!");
-				} else if (StartHere.Power1 == true
-						&& (StartHere.Power2 == true)
-						&& (StartHere.Power3 == false)) {
-					System.out
-							.println("There is a power cell in generators 1 and 2!");
-				} else if (StartHere.Power1 == true
-						&& (StartHere.Power2 == true)
-						&& (StartHere.Power3 == true)) {
-					System.out
-							.println("There is a power cell in generators 1, 2, and 3!");
+				if (StartHere.Power1 == true && (StartHere.Power2 == false)&& (StartHere.Power3 == false)) {
+					System.out.println("There is a power cell in generator 1, but not two or three");
+				} else if (StartHere.Power1 == false&& (StartHere.Power2 == false)&& (StartHere.Power3 == false)) {
+					System.out.println("There is no power cell in generator 1, 2, or 3!");
+				} else if (StartHere.Power1 == true&& (StartHere.Power2 == true)&& (StartHere.Power3 == false)) {
+					System.out.println("There is a power cell in generators 1 and 2!");
+				} else if (StartHere.Power1 == true&& (StartHere.Power2 == true)&& (StartHere.Power3 == true)) {
+					System.out.println("There is a power cell in generators 1, 2, and 3!");
 				}
 
 			} else if (response.contains("left")) {
-				System.out.println("You can not move left.");
+				System.out.println("You are moving back!");
+				mainRoom.Mainstart();
 			} else if (response.contains("right")) {
 				System.out.println("You can not move right");
-			} else if (response.contains("pick")) {
+			}else if (response.contains("Forward")) {
+				System.out.println("You can not move Forward");
+			}else if (response.contains("Backward")) {
+				System.out.println("You can not move Backward");
+			}else if (response.contains("pick")) {
 				System.out.println("There is nothing to pick up");
 			} else if (response.contains("attack")) {
 				System.out.println("There is nothing to attack");
@@ -50,14 +44,11 @@ public class PowerRoom {
 					System.out.println("You placed power cell in generator 1");
 					StartHere.item = "nothing";
 					StartHere.Power1 = true;
-				} else if (StartHere.Power1 == true
-						&& (StartHere.Power2 == false)) {
+				} else if (StartHere.Power1 == true&& (StartHere.Power2 == false)) {
 					System.out.println("You placed power cell in generator 2");
 					StartHere.item = "nothing";
 					StartHere.Power2 = true;
-				} else if (StartHere.Power1 == true
-						&& (StartHere.Power2 == true)
-						&& (StartHere.Power3 == false)) {
+				} else if (StartHere.Power1 == true&& (StartHere.Power2 == true)&& (StartHere.Power3 == false)) {
 					System.out.println("You placed power cell in generator 3");
 					StartHere.item = "nothing";
 					StartHere.Power3 = true;
@@ -66,10 +57,8 @@ public class PowerRoom {
 				else if (response.contains("pick")) {
 					System.out.println("There is nothing to pick up");
 				}
-				if (StartHere.Power1 == true && (StartHere.Power2 == true)
-						&& (StartHere.Power3 == true)) {
-					System.out
-							.println("The ship has been restored! Paycheck will be wired to 1-800-911 in 5-10 business days.");
+				if (StartHere.Power1 == true && (StartHere.Power2 == true)&& (StartHere.Power3 == true)) {
+					System.out.println("The ship has been restored! Paycheck will be wired to 1-800-911 in 5-10 business days.");
 				}
 			}
 		}
