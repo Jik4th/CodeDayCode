@@ -15,7 +15,7 @@ public class mainRoom {
 		}
 		else if (response.contains("left")) {
 			System.out.println("Dank goes through the left door into another room.");
-			//Insert room1 code here
+			Room1.Roomstart(1, 1, 1, 10, 4);
 		}
 		else if (response.contains("right")){
 			System.out.println("Dank goes through the right door into another room.");

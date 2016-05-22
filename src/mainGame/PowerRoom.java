@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class PowerRoom {
 
-	public static void Powerstart(int Power1, int Power2, int Power3, int Health, int Item) { // Sup with all these inputs?
+	public static void Powerstart(int Power1, int Power2, int Power3, int Health, String Item) { // Sup with all these inputs?
 		int generator;
 		String response;
 		int number;
@@ -50,18 +50,21 @@ public class PowerRoom {
 			number = input.nextInt();
 			if (number == 1 && Power1 == 0) {
 				System.out.println("You placed power cell in generator 1");
+				Item= "nothing";
 			}
 			else if (number == 1 && Power1 == 1) {
 				System.out.println("Generator 1 is full please choose a different generator");
 			}
 			if (number == 2 && Power1 == 0) {
 				System.out.println("You placed power cell in generator 2");
+				Item= "nothing";
 			}
 			else if (number == 2 && Power1 == 1) {
 				System.out.println("Generator 1 is full please choose a different generator");
 			}
 			if (number == 3 && Power1 == 0) {
 				System.out.println("You placed power cell in generator 3");
+				Item= "nothing";
 			}
 			else if (number == 3 && Power1 == 1) {
 				System.out.println("Generator 1 is full please choose a different generator");
