@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.security.SecureRandom;
 
 public class Room1 {
-	public static void Roomstart(int Power1, int Power2, int Power3, int Health, String Item){
+	public static void Roomstart(){
 		
 		String response;
 		Scanner input = new Scanner(System.in);
@@ -26,11 +26,11 @@ public class Room1 {
 			System.out.println("Dank can pick up a flamethrower or a power cell.");
 			response = input.next();
 			if(response.contains("flamethrower")){
-				Item="flamethrower";
+				StartHere.item ="flamethrower";
 				System.out.println("Dank picked up a flamethrower!");
 			}
 			else if (response.contains("power cell"))
-				Item= "power cell";
+				StartHere.item = "power cell";
 			System.out.println("Dank picked up a power cell.");
 		}
 		else if (response.contains("attack")){

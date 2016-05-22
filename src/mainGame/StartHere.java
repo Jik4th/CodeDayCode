@@ -3,9 +3,15 @@ package mainGame;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
 //Looks Balla af -- JH
 
 public class StartHere {
+	public static String item = "nothing";
+	public static boolean Power1 = false;
+	public static boolean Power2 = false;
+	public static boolean Power3 = false;
+	public static int Health = 10;
 
 	public static void main(String[] args) {
 		// Create new scanner object

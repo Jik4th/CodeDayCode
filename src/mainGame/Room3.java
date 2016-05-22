@@ -8,7 +8,7 @@ public class Room3 {
 		SecureRandom random = new SecureRandom();
 		int enemy=3;
 		int damage = 1 + random.nextInt(3);
-		System.out.println("You are now in the blan Room. ");
+		System.out.println("You are now in Room3. ");
 		response = input.next();
 		
 		if(response.contains("Look Around")){
@@ -46,4 +46,4 @@ public class Room3 {
 
 	}
 }
-}
+

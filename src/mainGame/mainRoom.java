@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class mainRoom {
 
 
-	public static void Powerstart(int Power1, int Power2, int Power3, int Health, int Item){
+	public static void Powerstart(){
 		String response;
 		Scanner input = new Scanner(System.in);
 		System.out.println("Dank is now in the Main Room. What would you like to do?");
@@ -15,7 +15,7 @@ public class mainRoom {
 		}
 		else if (response.contains("left")) {
 			System.out.println("Dank goes through the left door into another room.");
-			Room1.Roomstart(1, 1, 1, 10, 4);
+			Room1.Roomstart();
 		}
 		else if (response.contains("right")){
 			System.out.println("Dank goes through the right door into another room.");

@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Room2 {
-public static void Room2start(int Power1, int Power2, int Power3, int Health, String Item){
+public static void Room2start(){
 		
 		String response;
 		Scanner input = new Scanner(System.in);

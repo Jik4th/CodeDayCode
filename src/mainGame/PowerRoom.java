@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class PowerRoom {
 
-	public static void Powerstart(int Power1, int Power2, int Power3, int Health, String Item) { // Sup with all these inputs?
+	public static void Powerstart() { // Sup with all these inputs?
 		int generator;
 		String response;
 		int number;
@@ -12,24 +12,19 @@ public class PowerRoom {
 		response = input.next();
 		
 		if(response.contains("Look Around")){
-			if (Power1 == 1) {
-				System.out.println("There is a power cell in generator 1");
+			if (StartHere.Power1 == true && (StartHere.Power2 == false) && (StartHere.Power3 == false)) {
+				System.out.println("There is a power cell in generator 1, but not two or three");
 			}
-			else if (Power1 == 0) {
-				System.out.println("There is no power cell in generator 1. Generator 1 is empty!");
+			else if (StartHere.Power1 == false && (StartHere.Power2 == false) && (StartHere.Power3 == false)) {
+				System.out.println("There is no power cell in generator 1, 2, or 3!");
 			}
-			else if (Power2 == 1) {
-				System.out.println("There is a power cell in generator 2");
+			else if (StartHere.Power1 == true && (StartHere.Power2 == true) && (StartHere.Power3 == false)) {
+				System.out.println("There is a power cell in generators 1 and 2!");
 			}
-			else if (Power2 == 0) {
-				System.out.println("There is no power cell in generator 2. Generator 2 is empty!");
+			else if (StartHere.Power1 == true && (StartHere.Power2 == true) && (StartHere.Power3 == true)) {
+				System.out.println("There is a power cell in generators 1, 2, and 3!");
 			}
-			else if (Power3 == 1) {
-				System.out.println("There is a power cell in generator 3");
-			}
-			else if (Power3 == 0) {
-				System.out.println("There is no power cell in generator 3. Generator 3 is empty!");
-			}
+		
 			
 		}
 		else if (response.contains("left")) {
@@ -46,34 +41,28 @@ public class PowerRoom {
 		}
 		else if (response.equals("place power cell in Generator")){
 
-			System.out.println("in generator 1, 2, or 3");
-			number = input.nextInt();
-			if (number == 1 && Power1 == 0) {
+			if (StartHere.Power1 = false) {
 				System.out.println("You placed power cell in generator 1");
-				Item= "nothing";
+				StartHere.item= "nothing";
+				StartHere.Power1 = true;
 			}
-			else if (number == 1 && Power1 == 1) {
-				System.out.println("Generator 1 is full please choose a different generator");
-			}
-			if (number == 2 && Power1 == 0) {
+			else if (StartHere.Power1 == true && (StartHere.Power2 == false)) {
 				System.out.println("You placed power cell in generator 2");
-				Item= "nothing";
+				StartHere.item= "nothing";
+				StartHere.Power2 = true;
 			}
-			else if (number == 2 && Power1 == 1) {
-				System.out.println("Generator 1 is full please choose a different generator");
-			}
-			if (number == 3 && Power1 == 0) {
+			else if (StartHere.Power1 == true && (StartHere.Power2 == true) && (StartHere.Power3 == false)) {
 				System.out.println("You placed power cell in generator 3");
-				Item= "nothing";
-			}
-			else if (number == 3 && Power1 == 1) {
-				System.out.println("Generator 1 is full please choose a different generator");
+				StartHere.item= "nothing";
+				StartHere.Power3 = true;
 			}
 			
-
-
+			else if (response.contains("pick")){
 			System.out.println("There is nothing to pick up");
-
+			}
+		if (StartHere.Power1 == true && (StartHere.Power2 == true) && (StartHere.Power3 == true)) {
+			System.out.println("The ship has been restored! Paycheck will be wired to 1-800-911 in 5-10 business days.");
+		}
 		}
 		
 	}//end Powerstart method
