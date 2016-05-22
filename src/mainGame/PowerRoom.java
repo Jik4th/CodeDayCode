@@ -6,6 +6,7 @@ public class PowerRoom {
 	public static void Powerstart(int Power1, int Power2, int Power3, int Health, int Item) {
 		int generator;
 		String response;
+		int number;
 		Scanner input = new Scanner(System.in);
 		System.out.println("You are now in the Auxillary Power Room. There are three generators across one wall. What would you like to do.");
 		response = input.next();
@@ -43,8 +44,29 @@ public class PowerRoom {
 		else if (response.equals("attack")){
 			System.out.println("There is nothing to attack");
 		}
-		else if (response.equals("place power cell in Generator" +  )){
-			System.out.println("There is nothing to pick up");
+		else if (response.equals("place power cell in Generator")){
+			System.out.println("in generator 1, 2, or 3");
+			number = input.nextInt();
+			if (number == 1 && Power1 == 0) {
+				System.out.println("You placed power cell in generator 1");
+			}
+			else if (number == 1 && Power1 == 1) {
+				System.out.println("Generator 1 is full please choose a different generator");
+			}
+			if (number == 2 && Power1 == 0) {
+				System.out.println("You placed power cell in generator 2");
+			}
+			else if (number == 2 && Power1 == 1) {
+				System.out.println("Generator 1 is full please choose a different generator");
+			}
+			if (number == 3 && Power1 == 0) {
+				System.out.println("You placed power cell in generator 3");
+			}
+			else if (number == 3 && Power1 == 1) {
+				System.out.println("Generator 1 is full please choose a different generator");
+			}
+			
+
 		}
 		
 	}//end Powerstart method
