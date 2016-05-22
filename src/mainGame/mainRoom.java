@@ -3,12 +3,20 @@ import java.util.Scanner;
 
 public class mainRoom {
 
-
+	
+	public static void delay(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException exp) {
+        }
+	} 
 	public static void Mainstart(){
 		String response;
 		Scanner input = new Scanner(System.in);
 		while (StartHere.Health > 1) {
-		System.out.println("Dank is now in the Main Room. What would you like to do?");
+			delay(1000);
+		System.out.println("Dank is now in the Main Room. Here is a picture  What would you like to do?");
+	
 		response = input.next();
 		
 		if(response.contains("Look Around")){

@@ -1,7 +1,17 @@
 package mainGame;
 import java.security.SecureRandom;
 import java.util.Scanner;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 public class Room3 {
+	public static void delay(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException exp) {
+        }
+	} 
 	public static void Room3Start(){
 		String response;
 		Scanner input = new Scanner(System.in);
@@ -10,12 +20,20 @@ public class Room3 {
 		int damage;
 		int press;
 		while (StartHere.Health > 1) {
-		
+		delay(1000);
 		System.out.println("You are now in Room3. What would you like to do?");
 		response = input.next();
 		
 		if(response.contains("look")){
 			System.out.println("There is a 'Roid Monster in this Room. You are about to fight him");
+			JFrame frame = new JFrame();
+			  ImageIcon icon = new ImageIcon("src/Images/CodeDayGame/SteroidbossSprite.png");
+			  JLabel label = new JLabel(icon);
+			  frame.add(label);
+			  frame.setDefaultCloseOperation
+			         (JFrame.EXIT_ON_CLOSE);
+			  frame.pack();
+			  frame.setVisible(true);
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
 				press = input.nextInt();
@@ -27,6 +45,7 @@ public class Room3 {
 				StartHere.Health = StartHere.Health - damage;
 				}
 			}
+				frame.setVisible(false);
 				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 		}
 		else if (response.contains("forward")) {
@@ -41,6 +60,14 @@ public class Room3 {
 		else if (response.contains("pick")){
 			if (enemy > 0) {
 			System.out.println("You cant pick up anything there is a 'Roid Monster. You are about to fight him");
+			JFrame frame = new JFrame();
+			  ImageIcon icon = new ImageIcon("src/Images/CodeDayGame/SteroidbossSprite.png");
+			  JLabel label = new JLabel(icon);
+			  frame.add(label);
+			  frame.setDefaultCloseOperation
+			         (JFrame.EXIT_ON_CLOSE);
+			  frame.pack();
+			  frame.setVisible(true);
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
 				press = input.nextInt();
@@ -52,6 +79,7 @@ public class Room3 {
 				StartHere.Health = StartHere.Health - damage;
 				}
 			}
+				frame.setVisible(false);
 				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 		}
 			else {
@@ -62,6 +90,14 @@ public class Room3 {
 		}
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
+			JFrame frame = new JFrame();
+			  ImageIcon icon = new ImageIcon("src/Images/CodeDayGame/SteroidbossSprite.png");
+			  JLabel label = new JLabel(icon);
+			  frame.add(label);
+			  frame.setDefaultCloseOperation
+			         (JFrame.EXIT_ON_CLOSE);
+			  frame.pack();
+			  frame.setVisible(true);
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
 				press = input.nextInt();
@@ -73,6 +109,7 @@ public class Room3 {
 				StartHere.Health = StartHere.Health - damage;
 				}
 			}
+				frame.setVisible(false);
 				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 		}
 		
@@ -87,8 +124,8 @@ public class Room3 {
 		
 
 		}
-		else if (response.contains("place power cell")){
-			
+		else if (response.contains("place ")){
+			System.out.println("You cant place anything here");
 
 		}
 			

@@ -1,8 +1,17 @@
 package mainGame;
 import java.util.Scanner;
 import java.security.SecureRandom;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Room1 {
+	public static void delay(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException exp) {
+        }
+	} 
 	public static void Roomstart(){
 		
 		String response;
@@ -12,12 +21,20 @@ public class Room1 {
 		int damage;
 		int press;
 		while (StartHere.Health > 1) {
-		 
+		 delay(1000);
 		System.out.println("Dank is now in Room1. What would you like to do?");
 		response = input.next();
 		
 		if(response.contains("look")){
 			System.out.println("There is a Gas Monster in this Room. You are about to fight him");
+			JFrame frame = new JFrame();
+			  ImageIcon icon = new ImageIcon("src/Images/CodeDayGame/GaseousBoss.png");
+			  JLabel label = new JLabel(icon);
+			  frame.add(label);
+			  frame.setDefaultCloseOperation
+			         (JFrame.EXIT_ON_CLOSE);
+			  frame.pack();
+			  frame.setVisible(true);
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
 				press = input.nextInt();
@@ -29,6 +46,7 @@ public class Room1 {
 				StartHere.Health = StartHere.Health - damage;
 				}
 			}
+				frame.setVisible(false);
 				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 			}
 				
@@ -42,6 +60,14 @@ public class Room1 {
 		else if (response.contains("pick")){
 			if (enemy > 0) {
 			System.out.println("You cant pick up anything there is a Gas Monster. You are about to fight him");
+			 JFrame frame = new JFrame();
+			  ImageIcon icon = new ImageIcon("src/Images/CodeDayGame/GaseousBoss.png");
+			  JLabel label = new JLabel(icon);
+			  frame.add(label);
+			  frame.setDefaultCloseOperation
+			         (JFrame.EXIT_ON_CLOSE);
+			  frame.pack();
+			  frame.setVisible(true);
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
 				press = input.nextInt();
@@ -53,6 +79,7 @@ public class Room1 {
 				StartHere.Health = StartHere.Health - damage;
 				}
 			}
+				frame.setVisible(true);
 				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 			}
 			else {
@@ -63,6 +90,14 @@ public class Room1 {
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
 			System.out.println("There is a Gas Monster in this Room. You are about to fight him");
+			JFrame frame = new JFrame();
+			  ImageIcon icon = new ImageIcon("src/Images/CodeDayGame/GaseousBoss.png");
+			  JLabel label = new JLabel(icon);
+			  frame.add(label);
+			  frame.setDefaultCloseOperation
+			         (JFrame.EXIT_ON_CLOSE);
+			  frame.pack();
+			  frame.setVisible(true);
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
 				press = input.nextInt();
@@ -74,6 +109,7 @@ public class Room1 {
 				StartHere.Health = StartHere.Health - damage;
 				}
 			}
+				frame.setVisible(false);
 				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 			}
 		else if (response.contains("forward")) {

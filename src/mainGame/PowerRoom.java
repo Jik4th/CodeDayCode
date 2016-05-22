@@ -4,12 +4,21 @@ import java.util.Scanner;
 
 public class PowerRoom {
 
+	public static void delay(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException exp) {
+        }
+	} // end delay method
+
+	
 	@SuppressWarnings("unused")
 	public static void Powerstart() { // Sup with all these inputs?
 
 		String response;
 		Scanner input = new Scanner(System.in);
 		while (StartHere.Health > 1) {
+			delay(1000);
 			System.out.println("You are now in the Auxillary Power Room. There are three generators across one wall. What would you like to do.");
 			response = input.next();
 
@@ -77,5 +86,8 @@ public class PowerRoom {
 		
 		System.out.println("Game OVER");
 	}
-}// end Powerstart method
+// end Powerstart method
+} // end delay method
+
+
 // end class
