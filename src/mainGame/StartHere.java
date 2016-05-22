@@ -23,7 +23,7 @@ public class StartHere {
 		delay(3000);
 		System.out.println("[Location recieved]: Hydra Starship");
 		delay(3000);
-		System.out.println("Unkown: Hello? Can anyone hear me? (yes/no)");
+		System.out.println("Unknown: Hello? Can anyone hear me? (yes/no)");
 		response = input.next();
 		
 		if (response.equals("yes"))
@@ -34,7 +34,7 @@ public class StartHere {
 		} // end else
 		
 		delay(3000);
-		System.out.println("My name is Dank, I am a robot. The ship that I was on just crashed and I seem to be the only survivor.");
+		System.out.println("My name is Dank, I am your 1-800-911 Police Launcher Drone, or PLD for short. The ship that I was on just crashed and I seem to be the only survivor.");
 		delay(3000);
 		System.out.println("I was sent onto this ship on a mission to clear the illegal disease and species that is on board.");
 		delay(3000);
@@ -50,7 +50,6 @@ public class StartHere {
 			delay(3000);
 			System.out.println("They were supposed to guide me to the control room so I can enable a virus onto the starboard so it can self-destruct");
 			delay(3000);
-			System.out.println("Let me send you a map of the ship before I go in.");
 		} // end if
 		else if (response.equals("no")) {
 			System.out.println("Good call, I didn't know if I was going to survive in there or not.");

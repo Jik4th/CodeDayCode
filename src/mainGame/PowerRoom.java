@@ -11,7 +11,7 @@ public class PowerRoom {
 		System.out.println("You are now in the Auxillary Power Room. There are three generators across one wall. What would you like to do.");
 		response = input.next();
 		
-		if(response.equals("Look Around")){
+		if(response.contains("Look Around")){
 			if (Power1 == 1) {
 				System.out.println("There is a power cell in generator 1");
 			}
@@ -32,16 +32,16 @@ public class PowerRoom {
 			}
 			
 		}
-		else if (response.equals("move left")) {
+		else if (response.contains("left")) {
 			System.out.println("You can not move left.");
 		}
-		else if (response.equals("move right")){
+		else if (response.contains("right")){
 			System.out.println("You can not move right");
 		}
-		else if (response.equals("pick up item")){
+		else if (response.contains("pick")){
 			System.out.println("There is nothing to pick up");
 		}
-		else if (response.equals("attack")){
+		else if (response.contains("attack")){
 			System.out.println("There is nothing to attack");
 		}
 		else if (response.equals("place power cell in Generator")){
