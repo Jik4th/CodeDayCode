@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class PowerRoom {
 
-	public static void Powerstart(int Power1, int Power2, int Power3, int Health, int Item) {
+	public static void Powerstart(int Power1, int Power2, int Power3, int Health, int Item) { // Sup with all these inputs?
 		int generator;
 		String response;
 		int number;

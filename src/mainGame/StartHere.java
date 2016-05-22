@@ -3,6 +3,8 @@ package mainGame;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+//Looks Balla af -- JH
+
 public class StartHere {
 
 	public static void main(String[] args) {
