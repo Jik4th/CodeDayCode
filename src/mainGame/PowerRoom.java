@@ -45,6 +45,7 @@ public class PowerRoom {
 			System.out.println("There is nothing to attack");
 		}
 		else if (response.equals("place power cell in Generator")){
+
 			System.out.println("in generator 1, 2, or 3");
 			number = input.nextInt();
 			if (number == 1 && Power1 == 0) {
@@ -66,6 +67,9 @@ public class PowerRoom {
 				System.out.println("Generator 1 is full please choose a different generator");
 			}
 			
+
+
+			System.out.println("There is nothing to pick up");
 
 		}
 		
