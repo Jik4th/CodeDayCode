@@ -10,21 +10,28 @@ public class Room1 {
 		SecureRandom random = new SecureRandom();
 		int enemy = 3;
 		int damage;
+		int press;
 		while (StartHere.Health > 1) {
 		 
 		System.out.println("Dank is now in Room1. What would you like to do?");
 		response = input.next();
 		
-		if(response.contains("Look Around")){
+		if(response.contains("look")){
 			System.out.println("There is a Gas Monster in this Room. You are about to fight him");
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
+				press = input.nextInt();
+				if(press == 1){
 				damage = 1 + random.nextInt(3);
 				enemy = enemy - damage;
-				System.out.println("Enemy is still alive!");
+				System.out.println("The monster has been hit. It has " + enemy + " health!!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+				}
 			}
-			System.out.println("Victory! is yours. Good Job");
-		}
+				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
+			}
+				
 		else if (response.contains("left")) {
 			System.out.println("Dank can't go to the left, there's a monster blocking the way!.");
 		}
@@ -35,14 +42,18 @@ public class Room1 {
 		else if (response.contains("pick")){
 			if (enemy > 0) {
 			System.out.println("You cant pick up anything there is a Gas Monster. You are about to fight him");
-				while (enemy > 0) {
+			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
-				damage = 1 + random.nextInt(2);
+				press = input.nextInt();
+				if(press == 1){
+				damage = 1 + random.nextInt(3);
 				enemy = enemy - damage;
-				System.out.println("Enemy is still alive!");
+				System.out.println("The monster has been hit. It has " + enemy + " health!!");
 				damage = 1 + random.nextInt(4);
 				StartHere.Health = StartHere.Health - damage;
 				}
+			}
+				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
 			}
 			else {
 				System.out.println("You picked up a power cell");
@@ -54,12 +65,17 @@ public class Room1 {
 			System.out.println("There is a Gas Monster in this Room. You are about to fight him");
 			while (enemy > 0) {
 				System.out.println("Press 1 to shoot!");
+				press = input.nextInt();
+				if(press == 1){
 				damage = 1 + random.nextInt(3);
 				enemy = enemy - damage;
-				System.out.println("Enemy is still alive!");
+				System.out.println("The monster has been hit. It has " + enemy + " health!!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+				}
 			}
-			System.out.println("Victory! is yours. Good Job");
-		}
+				System.out.println("Victory! is yours. Good Job. The enemy droped a power cell. You have " + StartHere.Health + " health" );
+			}
 		else if (response.contains("forward")) {
 			System.out.println("Dank can not move forward.");
 		}

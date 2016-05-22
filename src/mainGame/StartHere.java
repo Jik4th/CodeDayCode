@@ -8,33 +8,30 @@ import java.util.concurrent.TimeUnit;
 
 public class StartHere {
 	public static String item = "nothing";
-	public static boolean Power1 = false;
-	public static boolean Power2 = false;
-	public static boolean Power3 = false;
-	public static int Health = 10;
+	public static int Power1 = 0;
+	public static int Power2 = 0;
+	public static int Power3 = 0;
+	public static int Health = 15;
 
 	public static void main(String[] args) {
 		// Create new scanner object
 		Scanner input = new Scanner(System.in);
-		
+		int time = 500;
 		// Declare Variables
 		String response;
 		
 		System.out.println("Welcome to Space Adventure 2402");
 		System.out.println("-------------------------------");
-		delay(2000);
+		delay(time);
 		System.out.println("[incoming transmission]");
-		delay(2000);
+		delay(time);
 		System.out.println("[Transmission Succesful!]");
-		delay(2000);
+		delay(time);
 		System.out.println("[Recieving Location]");
-		delay(2000);
+		delay(time);
 		System.out.println("[Location recieved]: Hydra Starship");
-		delay(3000);
+		delay(time);
 		System.out.println("Unknown: Hello? Can anyone hear me? (yes/no)");
-
-		delay(2000);
-		System.out.println("Unkown: Hello? Can anyone hear me? (yes/no)");
 		response = input.next();
 		
 		if (response.equals("yes"))
@@ -45,33 +42,33 @@ public class StartHere {
 		} // end else
 		
 
-		delay(3000);
+		delay(time);
 		System.out.println("My name is Dank, I am your 1-800-911 Police Launcher Drone, or PLD for short. The ship that I was on just crashed and I seem to be the only survivor.");
-		delay(3000);
+		delay(time);
 
-		delay(2000);
+		delay(time);
 		System.out.println("My name is Dank, I am a robot. The ship that I was on just crashed and I seem to be the only survivor.");
-		delay(2000);
+		delay(time);
 
 		System.out.println("I was sent onto this ship on a mission to clear the illegal disease and species that is on board.");
-		delay(2000);
+		delay(time);
 		System.out.println("Thankfully the disease has escaped to deep space, where no harm can be done.");
-		delay(2000);
+		delay(time);
 		System.out.println("Unfortunatly, the species still exists on board in seperate rooms.");
-		delay(2000);
+		delay(time);
 		System.out.println("Should I go into the rooms? (yes/no)");
 		response = input.next();
 		
 		if (response.equals("yes")){
 			System.out.println("I was sent up here with millitary fighters.");
-			delay(2000);
+			delay(time);
 			System.out.println("They were supposed to guide me to the control room so I can enable a virus onto the starboard so it can self-destruct");
 
-			delay(3000);
+			delay(time);
 
-			delay(2000);
+			delay(time);
 			System.out.println("Let me send you a map of the ship before I go in.");
-
+			mainRoom.Mainstart();
 		} // end if
 		else if (response.equals("no")) {
 			System.out.println("Good call, I didn't know if I was going to survive in there or not.");
