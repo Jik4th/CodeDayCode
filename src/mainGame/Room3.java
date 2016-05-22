@@ -57,6 +57,15 @@ public class Room3 {
 		}
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
+			System.out.println("There is a 'Roid Monster in this Room. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(2);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+		}
 		}
 		
 		else if (response.contains("backward")){

@@ -64,6 +64,16 @@ public static void Room2start(){
 		}
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
+			System.out.println("There is a Cyborg Monster in this Room. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(2);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+				damage = 1 + random.nextInt(4);
+				StartHere.Health = StartHere.Health - damage;
+			}
+			System.out.println("Victory! is yours. Good Job. He dropped a Power cell");
 		}
 		else if (response.contains("left")) {
 			System.out.println("Dank can not move left.");
@@ -71,9 +81,9 @@ public static void Room2start(){
 		else if (response.contains("right")){
 			System.out.println("Dank can not move right");
 		}
-		else if (response.equals("attack with item")){
-			System.out.println("There is nothing to pick up");
-		}
+//		else if (response.equals("attack with item")){
+//			System.out.println("There is nothing to pick up");
+//		}
 		else if (response.contains("access console")){
 		
 

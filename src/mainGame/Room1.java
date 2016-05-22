@@ -7,10 +7,11 @@ public class Room1 {
 		
 		String response;
 		Scanner input = new Scanner(System.in);
-		while (StartHere.Health > 1) {
 		SecureRandom random = new SecureRandom();
 		int enemy = 3;
-		int damage; 
+		int damage;
+		while (StartHere.Health > 1) {
+		 
 		System.out.println("Dank is now in Room1. What would you like to do?");
 		response = input.next();
 		
@@ -29,6 +30,7 @@ public class Room1 {
 		}
 		else if (response.contains("right")){
 			System.out.println("Dank can go through the door to its right. ");
+			mainRoom.Mainstart();
 		}
 		else if (response.contains("pick")){
 			if (enemy > 0) {
@@ -49,16 +51,24 @@ public class Room1 {
 		}
 		else if (response.contains("attack")){
 			System.out.println("Prepare to attack");
+			System.out.println("There is a Gas Monster in this Room. You are about to fight him");
+			while (enemy > 0) {
+				System.out.println("Press 1 to shoot!");
+				damage = 1 + random.nextInt(3);
+				enemy = enemy - damage;
+				System.out.println("Enemy is still alive!");
+			}
+			System.out.println("Victory! is yours. Good Job");
 		}
-		else if (response.contains("up")) {
-			System.out.println("Dank can not move left.");
+		else if (response.contains("forward")) {
+			System.out.println("Dank can not move forward.");
 		}
-		else if (response.contains("down")){
-			System.out.println("Dank can not move right");
+		else if (response.contains("backward")){
+			System.out.println("Dank can not move backward");
 		}
-		else if (response.equals("attack with item")){
-			System.out.println("There is nothing for Dank to pick up");
-		}
+//		else if (response.equals("attack with item")){
+//			System.out.println("There is nothing for Dank to pick up");
+//		}
 		else if (response.contains("access console")){
 		
 
