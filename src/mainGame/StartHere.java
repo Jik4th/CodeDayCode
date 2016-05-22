@@ -45,15 +45,16 @@ public class StartHere {
 		System.out.println("Should I go into the rooms? (yes/no)");
 		response = input.next();
 		
-		if (response.equals("yes"));{
+		if (response.equals("yes")){
 			System.out.println("I was sent up here with millitary fighters.");
 			delay(3000);
 			System.out.println("They were supposed to guide me to the control room so I can enable a virus onto the starboard so it can self-destruct");
 			delay(3000);
 			System.out.println("Let me send you a map of the ship before I go in.");
 		} // end if
-		if (response.equals("no")) {
+		else if (response.equals("no")) {
 			System.out.println("Good call, I didn't know if I was going to survive in there or not.");
+			System.exit(0);
 		} // end else
 		
 		
